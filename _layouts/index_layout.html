@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{page.title}}</title>
+		{% capture lvl %}{{ page.url | split:'/' | size }}{% endcapture %}
+		{% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+		<link rel="stylesheet" href="{{relative}}css/index.css">
+		<link rel="stylesheet" href="{{relative}}css/article.css">
+		<link rel="stylesheet" href="{{relative}}css/dark_knight.css">
+	</head>
+	<body>
+		<div id="continer">
+		{{content}}
+		</div>
+		<script src="{{relative}}js/index.js"></script>
+	</body>
+</html>
