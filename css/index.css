@@ -6,6 +6,9 @@ body, ul, li {
 	margin: 0 auto;
 	width: 950px;
 }
+.blog-name {
+	text-align: center;
+}
 .pagination {
 	margin: 0 auto;
 	text-align: center;

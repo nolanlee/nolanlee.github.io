@@ -3,11 +3,23 @@
 	<head>
 		<meta charset="utf-8">
 		<title>{{page.title}}</title>
-		{% capture lvl %}{{ page.url | split:'/' | size }}{% endcapture %}
-		{% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
-		<link rel="stylesheet" href="{{relative}}css/article.css">
+		<link rel="stylesheet" href="{{site.baseurl}}css/article.css">
 	</head>
-	<body>		
+	<body>
+		<aside>
+			<nav>
+				<ul>
+					<li>
+						<a href="{{ site.baseurl }}">HOME</a>
+					</li>
+				{% for post in site.posts %}
+					<li>
+						<a href="{{ post.url }}">{{ post.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</aside>
+		</nav>
 		<article class="article">
 			<h1 class="title">{{page.title}}</h1>
 			{{content}}
