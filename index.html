@@ -4,13 +4,13 @@ title: Nolan's Fresh Stuffs
 ---
 
 <header class="header">
-	<h1 class="blog-name">Nolan的新玩意儿</h1>
+	<h1 class="blog-name">Nolan's Fresh Stuffs</h1>
 </header>
-<section>
-	<ul>
+<section class="section">
+	<ul class="article-list">
 		{% for post in paginator.posts %}
 			<li class="article">
-				<h3 id="{{post.href}}">
+				<h3 class="article-title">
 					<a href="{{ post.url }}">{{ post.title }}</a>
 				</h3>
 				<article>{{post.content}}</article>
@@ -21,10 +21,10 @@ title: Nolan's Fresh Stuffs
 	{% if paginator.total_pages > 1 %}
 		<div class="pagination">
 			{% if paginator.previous_page %}
-				<a id="prev-page" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+				<a id="prev-page" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&lt;&lt;&lt;&lt;</a>
 			{% endif %}
 			{% if paginator.next_page %}
-				<a id="next-page" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+				<a id="next-page" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&gt;&gt;&gt;&gt;</a>
 			{% endif %}
 		</div>
 	{% endif %}
@@ -32,19 +32,17 @@ title: Nolan's Fresh Stuffs
 <aside>
 	<nav>
 		<ul>
-			<li>
-				<a href="{{ site.baseurl }}">HOME</a>
-			</li>
 			{% for post in site.posts %}
 				<li>
 					<a href="{{ post.url }}">{{ post.title }}</a>
-					{{ post.excerpt }} <!-- how to remove all tags?! -->
+					{{ post.excerpt | strip_html }} <!-- how to remove all tags?! -->
 				</li>
 			{% endfor %}
 		</ul>
 	</nav>
 </aside>
 <footer>
+	<!-- About Me -->
 	<p class="copyright"></p>
 </footer>
 

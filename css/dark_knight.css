@@ -1,1 +1,17 @@
-
+body {
+	color: #eaeaea;
+	background-color: #272822;
+}
+a {
+	color: #66d9ef;
+	text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+}
+.header {
+	box-shadow: 0 1px 10px black;
+	-webkit-box-shadow: 0 1px 10px black;
+	-moz-box-shadow: 0 1px 10px black;
+	-ie-box-shadow: 0 1px 10px black;
+}
+#next-page:hover {
+	text-shadow: 0 0 15px rgb(104, 182, 255);
+}

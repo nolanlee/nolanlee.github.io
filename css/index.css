@@ -1,15 +1,49 @@
-body, ul, li {
-	padding: 0;
+html, body, ul, li, h1, h2, h3 {
 	margin: 0;
+	border: 0;
+	padding: 0;
 }
-#continer {
+.section {
 	margin: 0 auto;
 	width: 950px;
 }
-.blog-name {
-	text-align: center;
+.header {
+	padding: 20px 0;
 }
-.pagination {
+.header .blog-name {
+	text-align: center;
+	font-size: 4em;
+}
+.section .article-list {
+	margin-top: 50px;
+}
+.section .article-list .article {
+	width: inherit;
+}
+.section .article-list .article .article-title {
+	margin-bottom: 25px;
+	font-size: 2em;
+}
+.section .article-list .article .article-title a {
+	text-decoration: none;
+}
+.section .pagination {
 	margin: 0 auto;
 	text-align: center;
+	font-family: cursive;
+}
+.section .pagination:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.section .pagination a {
+	font-size: 2em;
+	text-decoration: none;
+}
+.section .pagination #prev-page {
+	float: left;
+}
+.section .pagination #next-page {
+	float: right;
 }
