@@ -8,25 +8,29 @@
 	</head>
 	<body>
 		<header class="header">
-			<h1 class="blog-name"><a href="{{site.baseurl}}">Nolan's Fresh Stuffs</a></h1>
+			<!-- <h1 class="blog-name"><a href="{{site.baseurl}}">Nolan's Fresh Stuffs</a></h1> -->
+			<h1 class="title">{{page.title}}</h1>
 		</header>
-		{% if {{page.isCate}} %}
-			<aside class="article-nav-container">
-				<h2>Category</h2>
-				<nav class="article-nav">
-					<ul>
-						{% for post in site.posts %}
-							<li>
-								<a href="{{ post.url }}">{{ post.title }}</a>
-							</li>
-						{% endfor %}
-					</ul>
-				</nav>
-			</aside>
-		{% endif %}
 		<section class="article-container">
-			<article class="article">
-				<h1 class="title">{{page.title}}</h1>
+			{% if {{page.isCate}} %}
+				<aside class="article-nav-container">
+					<h2>Category</h2>
+					<nav class="article-nav">
+						<ul>
+							{% for post in site.posts %}
+								<li>
+									<a href="{{ post.url }}">{{ post.title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</nav>
+				</aside>
+			{% endif %}
+			{% if {{page.isCate}} %}
+				<article class="article">
+			{% else %}
+				<article class="article no-category">
+			{% endif %}
 				<div class="article-date-container">
 					<span class="article-date-icon"></span>
 					<span class="article-date">{{ page.date | date: "%B %d, %Y" }}</span>

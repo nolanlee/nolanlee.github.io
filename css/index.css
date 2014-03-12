@@ -38,6 +38,11 @@ ul {
 	word-break: break-word;
 	text-align: justify;
 }
+.section .article-list .article:after {
+	display: block;
+	content: "";
+	clear: both;
+}
 .section .article-list .article .article-date-container {
 	float: right;
 	margin-top: 50px;

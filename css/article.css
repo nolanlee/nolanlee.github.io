@@ -4,44 +4,56 @@ html, body, ul, li, h1, h2, h3 {
 	padding: 0;
 }
 .header {
+	text-align: center;
 	padding: 20px 0;
 }
-.header .blog-name {
-	text-align: center;
-	font-size: 4em;
+.header .title {
+	font-size: 2.4em;
 }
 @media (max-width: 600px) {
-	.header .blog-name {
-		font-size: 2.8em;
+	.header .title {
+		font-size: 1.5em;
 	}
-}
-.header .blog-name a {
-	color: inherit;
-	text-decoration: none;
 }
 .article-nav-container {
 	position: absolute;
-	margin-top: 80px;
-	right: 0;
+	margin-top: 40px;
+	padding: 20px 10px;
+	width: 200px;
+	left: 73%;
 }
+.article-nav-container ul {
+	list-style: none;
+}
+.article-nav-container li {
+	margin-bottom: 10px;
+}
+
 .article-nav-container-fixed {
 	position: fixed!important;
+	box-shadow: 0 0px 20px #000;
 	margin-top: 0;
-	top: 0;
+	top: 10px;
 }
 .article-container {
-	margin: 0 auto;
+	margin: 30px auto;
 	max-width: 950px;
 	padding: 0 15px;
 }
 .article {
-	margin-top: 50px;
-	text-align: justify;
-	max-width: 750px;
+	font-size: 18px;
+	line-height: 1.5em;
+	max-width: 700px;
 }
-.article .title {
-	margin-bottom: 25px;
-	font-size: 2em;
+.article.no-category {
+	max-width: 950px;
+}
+.article .content {
+	padding: 20px;
+	box-shadow: inset 0 0 10px black;
+}
+.article .content ul {
+	list-style-position: inside;
 }
 .article .article-date-container {
 	margin-bottom: 25px
