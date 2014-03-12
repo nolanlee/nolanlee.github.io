@@ -1,10 +1,10 @@
 ---
 layout: index_layout
-title: Nolan's Fresh Stuffs 
+title: Nolan's Fresh Stuffs
 ---
 
 <header class="header">
-	<h1 class="blog-name">Nolan's Fresh Stuffs</h1>
+	<h1 class="blog-name"><a href="{{site.baseurl}}">Nolan's Fresh Stuffs</a></h1>
 </header>
 <section class="section">
 	<ul class="article-list">
@@ -13,7 +13,12 @@ title: Nolan's Fresh Stuffs
 				<h3 class="article-title">
 					<a href="{{ post.url }}">{{ post.title }}</a>
 				</h3>
-				<article>{{post.content}}</article>
+				<article>{{post.excerpt}}</article>
+				<a class="read-more" href="{{ post.url }}">Read more...</a>
+				<div class="article-date-container">
+					<span class="article-date-icon"></span>
+					<span class="article-date">{{ post.date | date: "%B %d, %Y" }}</span>
+				</div>
 			</li>
 		{% endfor %}
 	</ul>
@@ -29,18 +34,6 @@ title: Nolan's Fresh Stuffs
 		</div>
 	{% endif %}
 </section>
-<aside>
-	<nav>
-		<ul>
-			{% for post in site.posts %}
-				<li>
-					<a href="{{ post.url }}">{{ post.title }}</a>
-					{{ post.excerpt | strip_html }} <!-- how to remove all tags?! -->
-				</li>
-			{% endfor %}
-		</ul>
-	</nav>
-</aside>
 <footer>
 	<!-- About Me -->
 	<p class="copyright"></p>

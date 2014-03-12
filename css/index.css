@@ -3,9 +3,13 @@ html, body, ul, li, h1, h2, h3 {
 	border: 0;
 	padding: 0;
 }
+ul {
+	list-style-position: inside;
+}
 .section {
 	margin: 0 auto;
-	width: 950px;
+	max-width: 950px;
+	padding: 0 15px;
 }
 .header {
 	padding: 20px 0;
@@ -14,11 +18,72 @@ html, body, ul, li, h1, h2, h3 {
 	text-align: center;
 	font-size: 4em;
 }
+@media (max-width: 600px) {
+	.header .blog-name {
+		font-size: 2.8em;
+	}
+}
+.header .blog-name a {
+	color: inherit;
+	text-decoration: none;
+}
 .section .article-list {
+	list-style: none;
 	margin-top: 50px;
 }
 .section .article-list .article {
-	width: inherit;
+	max-width: inherit;
+	margin: 0 auto 45px;
+	padding: 0 20px;
+	word-break: break-word;
+	text-align: justify;
+}
+.section .article-list .article .article-date-container {
+	float: right;
+	margin-top: 50px;
+}
+.section .article-list .article .article-date-container .article-date-icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 1em;
+	position: relative;
+	top: 2px;
+}
+.section .article-list .article .article-date-container .article-date-icon:before {
+	display: block;
+	content: "";
+	width: 2px;
+	background: #272822;
+	height: 5px;
+	left: 7px;
+	position: absolute;
+	top: 2px;
+}
+.section .article-list .article .article-date-container .article-date-icon:after {
+	display: block;
+	content: "";
+	width: 7px;
+	background: #272822;
+	height: 2px;
+	left: 8px;
+	top: 6px;
+	position: absolute;
+	transform-origin: left;
+	-webkit-transform-origin: left;
+	-moz-transform-origin: left;
+	-ie-transform-origin: left;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg)
+	-ie-transform: rotate(45deg)
+}
+.section .article-list .article .article-date-container .article-date {
+	margin-left: 3px;
+}
+.section .article-list .article .article-date-container .article-date, .section .article-list .article .read-more {
+	font-family: Tahoma, Geneva, sans-serif
 }
 .section .article-list .article .article-title {
 	margin-bottom: 25px;
@@ -26,6 +91,13 @@ html, body, ul, li, h1, h2, h3 {
 }
 .section .article-list .article .article-title a {
 	text-decoration: none;
+}
+.section .article-list .article .read-more {
+	display: inline-block;
+	margin: 45px 0;
+	padding: 5px 10px;
+	text-decoration: none;
+	font-size: 1em;
 }
 .section .pagination {
 	margin: 0 auto;

@@ -1,5 +1,85 @@
-.article {
+html, body, ul, li, h1, h2, h3 {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+.header {
+	padding: 20px 0;
+}
+.header .blog-name {
+	text-align: center;
+	font-size: 4em;
+}
+@media (max-width: 600px) {
+	.header .blog-name {
+		font-size: 2.8em;
+	}
+}
+.header .blog-name a {
+	color: inherit;
+	text-decoration: none;
+}
+.article-nav-container {
+	position: absolute;
+	margin-top: 80px;
+	right: 0;
+}
+.article-nav-container-fixed {
+	position: fixed!important;
+	margin-top: 0;
+	top: 0;
+}
+.article-container {
 	margin: 0 auto;
+	max-width: 950px;
+	padding: 0 15px;
+}
+.article {
+	margin-top: 50px;
 	text-align: justify;
-	width: 750px;
+	max-width: 750px;
+}
+.article .title {
+	margin-bottom: 25px;
+	font-size: 2em;
+}
+.article .article-date-container {
+	margin-bottom: 25px
+}
+.article .article-date-container .article-date-icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 1em;
+	position: relative;
+	top: 2px;
+}
+.article .article-date-container .article-date-icon:before {
+	display: block;
+	content: "";
+	width: 2px;
+	background: #272822;
+	height: 5px;
+	left: 7px;
+	position: absolute;
+	top: 2px;
+}
+.article .article-date-container .article-date-icon:after {
+	display: block;
+	content: "";
+	width: 7px;
+	background: #272822;
+	height: 2px;
+	left: 8px;
+	top: 6px;
+	position: absolute;
+	transform-origin: left;
+	-webkit-transform-origin: left;
+	-moz-transform-origin: left;
+	-ie-transform-origin: left;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg)
+	-ie-transform: rotate(45deg)
 }

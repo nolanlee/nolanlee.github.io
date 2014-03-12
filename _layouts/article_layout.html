@@ -2,27 +2,40 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>{{page.title}}</title>
+		<title>Nolan | {{page.title}}</title>
 		<link rel="stylesheet" href="{{site.baseurl}}css/article.css">
+		<link rel="stylesheet" href="{{site.baseurl}}css/dark_knight.css">
 	</head>
 	<body>
-		<aside>
-			<nav>
-				<ul>
-					<li>
-						<a href="{{ site.baseurl }}">HOME</a>
-					</li>
-				{% for post in site.posts %}
-					<li>
-						<a href="{{ post.url }}">{{ post.title }}</a>
-					</li>
-				{% endfor %}
-			</ul>
-		</aside>
-		</nav>
-		<article class="article">
-			<h1 class="title">{{page.title}}</h1>
-			{{content}}
-		</article>	
+		<header class="header">
+			<h1 class="blog-name"><a href="{{site.baseurl}}">Nolan's Fresh Stuffs</a></h1>
+		</header>
+		{% if {{page.isCate}} %}
+			<aside class="article-nav-container">
+				<h2>Category</h2>
+				<nav class="article-nav">
+					<ul>
+						{% for post in site.posts %}
+							<li>
+								<a href="{{ post.url }}">{{ post.title }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</nav>
+			</aside>
+		{% endif %}
+		<section class="article-container">
+			<article class="article">
+				<h1 class="title">{{page.title}}</h1>
+				<div class="article-date-container">
+					<span class="article-date-icon"></span>
+					<span class="article-date">{{ page.date | date: "%B %d, %Y" }}</span>
+				</div>
+				<div class="content">
+					{{content}}
+				</div>
+			</article>
+		</section>
+		<script type="text/javascript" src="{{site.baseurl}}js/category.js"></script>
 	</body>
 </html>
