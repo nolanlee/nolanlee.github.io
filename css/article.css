@@ -10,10 +10,15 @@ a {
     text-align: center;
     padding: 20px 0;
     height: 38px;
+    text-shadow: none;
+}
+.header:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 .header .header-button {
     display: block;
-    position: absolute;
     width: 40px;
     height: 40px;
     box-shadow: 0px 0px 6px 0px #000;
@@ -34,8 +39,9 @@ a {
     -ie-box-shadow: inset 0px 0px 6px 0px #000;
 }
 .header #back-home {
-    left: 20px;
-    transform: rotate(45deg);
+    float: left;
+    margin-left: 20px;
+    transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
 .header #back-home:before {
@@ -52,13 +58,44 @@ a {
     -webkit-transform-origin: left;
     -webkit-transform: rotate(-90deg);
     top: -5px;
-    left: 22px
+    left: 22px;
+}
+.header #previous-post {
+    float: right;
+    margin-right: 20px;
+}
+.header #next-post {
+    float: right;
+    margin-right: 20px;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+.header #next-post:before, .header #previous-post:before {
+    width: 18px;
+    height: 2px;
+    left: 11px;
+    top: 18px;
+    transform-origin: right;
+    transform: rotate(45deg);
+    -webkit-transform-origin: right;
+    -webkit-transform: rotate(45deg);
+}
+.header #next-post:after, .header #previous-post:after {
+    width: 18px;
+    height: 2px;
+    transform-origin: right;
+    transform: rotate(-45deg);
+    -webkit-transform-origin: right;
+    -webkit-transform: rotate(-45deg);
+    top: 16px;
+    left: 10px
 }
 .header #category-button {
     display: none;
-    top: 20px;
-    right: 15px;
+    float: right;
+    margin-right: 20px;
 }
+
 .header #category-button:before {
     width: 22px;
     height: 2px;
@@ -69,18 +106,9 @@ a {
     height: 2px;
     margin: 0 auto;
 }
-;
- .header .title {
-    font-size: 2.4em;
-}
-@media (max-width: 520px) {
-    .header .title {
-        margin: 0 auto;
-        max-width: 60%;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+.article-container .title {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 .article-nav-container {
     position: absolute;

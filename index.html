@@ -2,10 +2,6 @@
 layout: index_layout
 title: Nolan's Fresh Stuffs
 ---
-
-<header class="header">
-	<h1 class="blog-name"><a href="{{site.baseurl}}">Nolan's Fresh Stuffs</a></h1>
-</header>
 <section class="section">
 	<ul class="article-list">
 		{% for post in paginator.posts %}
@@ -14,11 +10,11 @@ title: Nolan's Fresh Stuffs
 					<a href="{{ post.url }}">{{ post.title }}</a>
 				</h3>
 				<article>{{post.excerpt}}</article>
-				<a class="read-more" href="{{ post.url }}">Read more...</a>
 				<div class="article-date-container">
 					<span class="article-date-icon"></span>
 					<span class="article-date">{{ post.date | date: "%B %d, %Y" }}</span>
 				</div>
+				<a class="read-more" href="{{ post.url }}">Read more...</a>
 			</li>
 		{% endfor %}
 	</ul>
@@ -34,8 +30,4 @@ title: Nolan's Fresh Stuffs
 		</div>
 	{% endif %}
 </section>
-<footer>
-	<!-- About Me -->
-	<p class="copyright"></p>
-</footer>
 

@@ -13,10 +13,22 @@ ul {
 }
 .header {
     padding: 20px 0;
+    box-shadow: none;
 }
 .header .blog-name {
     text-align: center;
-    font-size: 4em;
+}
+.header #blog-title {
+    font-size: 2.4em;
+    display: block;
+}
+.header #about {
+    font-weight: normal;
+    font-size: 50px;
+    font-family: 'Parisienne', cursive;
+}
+.header #about:hover {
+    text-shadow: 0 0 10px #fff;
 }
 @media (max-width: 600px) {
     .header .blog-name {
@@ -122,4 +134,17 @@ ul {
 }
 .section .pagination #next-page {
     float: right;
+}
+/*********************About***************************/
+.pupup {
+    position: fixed;
+    background-color: #272822;
+    margin: 0 auto;
+    top: 100px;
+}
+.popup:before {   
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0,0,0,.6);
 }
