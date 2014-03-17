@@ -240,3 +240,6 @@ a {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg) -ie-transform: rotate(45deg)
 }
+#disqus_thread {
+    margin-top: 25px;
+}
