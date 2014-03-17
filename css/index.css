@@ -135,16 +135,18 @@ ul {
 .section .pagination #next-page {
     float: right;
 }
-/*********************About***************************/
-.pupup {
-    position: fixed;
-    background-color: #272822;
-    margin: 0 auto;
-    top: 100px;
-}
-.popup:before {   
+/***********************Browser Update***************************/
+#update-container {
     position: absolute;
-    width: 100%;
-    min-height: 100%;
-    background-color: rgba(0,0,0,.6);
+    height: 300px;
+    margin-top: -150px;
+    top: 50%;
+    border: 1px solid #000;
+    text-align: center;
+}
+#update-warning {
+    font-size: 2.4em;
+}
+#update-browser {
+    font-size: 1.5em;
 }
