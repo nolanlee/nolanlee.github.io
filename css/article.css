@@ -88,7 +88,7 @@ a {
     -webkit-transform-origin: right;
     -webkit-transform: rotate(-45deg);
     top: 16px;
-    left: 10px
+    left: 10px;
 }
 .header #category-button {
     display: none;
@@ -132,7 +132,7 @@ a {
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, .4);
     padding: 10px 15px;
-    font-size: 1.5em
+    font-size: 1.5em;
 }
 @media (max-width: 1000px) {
     .article-nav-container {
@@ -191,6 +191,9 @@ a {
     font-size: 18px;
     line-height: 1.5em;
 }
+.article pre {
+    white-space: pre-wrap;
+}
 .article.no-category {
     max-width: 950px;
 }
@@ -202,7 +205,7 @@ a {
     list-style-position: inside;
 }
 .article .article-date-container {
-    margin-bottom: 25px
+    margin-bottom: 25px;
 }
 .article .article-date-container .article-date-icon {
     display: inline-block;
@@ -238,7 +241,7 @@ a {
     -ie-transform-origin: left;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg) -ie-transform: rotate(45deg)
+    -moz-transform: rotate(45deg) -ie-transform: rotate(45deg);
 }
 #disqus_thread {
     margin-top: 25px;
