@@ -191,6 +191,9 @@ a {
     font-size: 18px;
     line-height: 1.5em;
 }
+.article pre {
+    white-space: pre-wrap;
+}
 .article.no-category {
     max-width: 950px;
 }
