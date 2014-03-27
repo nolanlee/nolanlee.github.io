@@ -54,6 +54,8 @@ ul {
     padding: 0 20px;
     word-break: break-word;
     text-align: justify;
+    font-size: 18px;
+    line-height: 1.5em;
 }
 .section .article-list .article:after {
     display: block;
@@ -107,7 +109,7 @@ ul {
     font-family: Tahoma, Geneva, sans-serif
 }
 .section .article-list .article .article-title {
-    margin-bottom: 25px;
+    margin-bottom: 45px;
     font-size: 2em;
     word-break: break-all;
 }
