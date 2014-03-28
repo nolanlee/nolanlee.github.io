@@ -3,6 +3,9 @@ html, body, ul, li, h1, h2, h3 {
     border: 0;
     padding: 0;
 }
+html {
+    font-family: Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+}
 a {
     text-decoration: none;
 }
@@ -112,9 +115,9 @@ a {
 }
 .article-nav-container {
     position: absolute;
-    margin-top: 50px;
+    margin-top: 130px;
     padding: 20px 10px;
-    width: 200px;
+    width: 220px;
     left: 73%;
 }
 .article-nav-popup {
@@ -189,7 +192,7 @@ a {
 }
 .article {
     font-size: 18px;
-    line-height: 1.5em;
+    line-height: 1.8em;
 }
 .article pre {
     white-space: pre-wrap;

@@ -6,6 +6,7 @@
         <title>Nolan | {{page.title}}</title>
         <link rel="shortcut icon" href="{{site.baseurl}}image/head.jpg">
         <link rel="stylesheet" href="{{site.baseurl}}css/article.css">
+        <link rel="stylesheet" href="{{site.baseurl}}css/post.css">
         <link rel="stylesheet" href="{{site.baseurl}}css/dark_knight.css">
         <link rel="stylesheet" href="{{site.baseurl}}css/highlight.css">
     </head>
@@ -52,9 +53,9 @@
         <section class="article-container">
             <h1 class="title">{{page.title}}</h1>
             {% if {{page.isCate}} %}
-                <article class="article">
+                <article class="article post">
             {% else %}
-                <article class="article no-category">
+                <article class="article post no-category">
             {% endif %}
                 <div class="article-date-container">
                     <span class="article-date-icon"></span>

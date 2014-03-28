@@ -3,6 +3,9 @@ html, body, ul, li, h1, h2, h3 {
     border: 0;
     padding: 0;
 }
+html {
+    font-family: Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+}
 ul {
     list-style-position: inside;
 }
@@ -19,6 +22,7 @@ ul {
     text-align: center;
 }
 .header #blog-title {
+    font-family: "Times New Roman", Times, serif;
     font-size: 2.4em;
     display: block;
 }
@@ -53,7 +57,7 @@ ul {
     margin: 0 auto 45px;
     padding: 0 20px;
     word-break: break-word;
-    text-align: justify;
+    /*text-align: justify;*/
     font-size: 18px;
     line-height: 1.5em;
 }
