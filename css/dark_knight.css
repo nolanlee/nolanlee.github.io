@@ -55,7 +55,7 @@ a {
 .article-date {
     color: rgba(0, 0, 0, .5);
 }
-#next-page:hover, #prev-page:hover, .article-title a:hover, .category-item a:hover {
+#next-page:hover, #prev-page:hover, .article-title a:hover, .category-item a:hover, .article a:hover {
     text-shadow: 0 0 5px rgb(93, 210, 82);
     -webkit-text-shadow: 0 0 5px rgb(93, 210, 82);
     -moz-text-shadow: 0 0 5px rgb(93, 210, 82);
