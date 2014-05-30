@@ -10,7 +10,7 @@ title: 流线型移动交互
 1. 确定(identify)用户想要在移动设备所实现的任务。
 2. 记住(memorize)尽可能多的用户的情景。
 3. 相信(presume)用户行为会成功并把他们带到下一个任务中。
-4. 预测(predict)用户的下一个行为并且做好相应准备。
+4. 预测(predict)用户的下一个行为并且做好相应准备。<!--more-->
 
 ## 任务导向式设计(Task-Oriented Design)
 
@@ -23,8 +23,11 @@ title: 流线型移动交互
 
 对于桌面用户，我们专注于花更长时间和精力(预订机票)的交互，因为[桌面用户比起移动用户愿意花更多的时间在页面上并且不太可能离开](http://www.webperformancetoday.com/2012/01/20/interesting-new-findings-about-page-views-time-on-site-and-bounce-rate-across-browsers-and-platforms/)，然而移动用户希望(is looking to)完成一个小任务而且他们也没有足够的耐心(patience)。另外，由于在机场的时候用手机上检查航班状态是一个很普遍的用例，我们将把它列到最前列。
 ![desktop-prototype-image](http://www.smashingmagazine.com/wp-content/uploads/2013/04/01-desktop-opt.png)
+
 (*对于桌面用户，我们将专注于更长时间和精力的交互*)
+
 ![mobile-prototype-image](http://www.smashingmagazine.com/wp-content/uploads/2013/04/02-mobile-opt.png)
+
 (*用户访问Mobile Air移动网页将远离首页。最突出(prominent)和最接近的任务应该是飞机状态和查票*)。
 
 如果你在家并且想访问Mobile Air，而且有一个很棒的笔记本在咖啡桌上，你是不会把手机掏出你的口袋然后去访问它的。Mobile Air的手机网页访问者一定不是在家里的。而且很可能，他们正在旅行当中。最突出(prominent)和最接近的任务应该是航班状态和查票。预订应该是有可能的，但它不是高优先级的。先前，我们已经翻转了头部的全部体验，因为关于我们的用户为什么来我们知道得更多。
@@ -80,6 +83,7 @@ CACHE MANIFEST
 关于这点，我们有一个可以离线工作的快速的应用，但是我们没有处理(tacke)关于用户刷新或者当用户重启浏览器的行为。假设(suppose)Ann正在检查她的航班状态同时在不断地(constantly)刷新。我们可以提供一个按钮去做这件事，但是如果她休眠了她的手机然后放回口袋呢？浏览器将会在一段时间后(或者在选择其他应用的时候)销毁页面状态，所以你的应用应该可以恢复状态。这便是路由的由来。
 
 任何独立的页面应该有自己的路由，而且它应该能够在打开路由的情况下被完全载入——意味着我们必须能重新建立我们的应用状态而不用强迫Ann重新开始从首页跳转回她曾在的那个地方。为了这么做，我们需要路由。你应该自己建立一个，但是很多不同框架的好用的Javascript路由可以用。这里是Backbone.js的路由。
+
 ```js
 // Define the router
 var MobileAirRouter = Backbone.Router.extend({
@@ -112,11 +116,14 @@ Backbone.history.start()
 Instagrame的用户体验被人们所称颂，其中的一个核心策略(tactic)是[乐观的性能动作(perform actions optimistically)](https://speakerdeck.com/mikeyk/secrets-to-lightning-fast-mobile-design)。这意味着当用户说，“提交更新的状态”，系统立即(immediately)说，“完成！”，然后让用户返回时间线，去添加新的照片。从来没有意识到这个数据甚至还没有离开手机。事实是(In reality)，你的照片已经在Instagram的服务器上了在你点击OK之前，并且在服务器确认以后它已经出现在你的时间线上了。可观测速度的一石二鸟！
 
 让我们应用这样的概念(concept)在我们的移动预订(reservation)系统上。我们打算有五个页面：
+
 1. 提交航班和日期，
 2. 选择第一个地点(leg)，
 3. 选择第二个地点,
 4. 支付，
 5. 得到确认信息
+
+
 ![speed-reservation](http://www.smashingmagazine.com/wp-content/uploads/2013/04/04-speed-opt.png)
 有次Ann选择了她的航班和日期——但是之前她已经点击了“寻找航班”的按钮——我们将为第一个地点更新信息。这样的话(this way)，如果她要(were to)更改这些值几次，我们可能承担额外的数据消耗(incur an extra data cost)，但是下个页面将会几乎瞬间显示。这里是我们如何提前更新页面:
 ```js
@@ -160,6 +167,7 @@ fetchFlightLegs(from, to, on, until).done(function() {
 // If the fields haven't changed, we piggyback on the current request,
 // which has been in progress since they updated the fields
 ```
+
 为了不积累(rack up)大量的数据，我们可能想包装我们的调用用类似Underscore.js的`_.debounce`方法，它会延迟一个特定毫秒后再执行，然后新建一个新的延迟如果这个函数被重新调用。基本上，它会让应用的获取行为(performing the fetch)“安定下来”(settle down)。
 
 在我们的实际里，第一个地点和第二个地点的选择是在不同的屏幕上，但是这不意味着它们不得不分割(separate)请求。我们可以更新我们的`fetchFlightlegs`方法让第一个地点和第二个点的请求合并(lump)为一个。因此(thus)，从第一个到第二个会瞬间(instantaneous)过渡(transition)。支付的提交(submission of payment)信息请求不需要获取。
@@ -171,6 +179,7 @@ fetchFlightLegs(from, to, on, until).done(function() {
 
 ## 专注于真正重要的事情 (Focus On What Matters)
 移动交互是一个不同的世界，不同的约束(constrains)和不同的预期。简单的添加响应式样式不能满足你的用户基于他们使用的情境所改变的需求(demand)。在建立移动应用的时候请记住下面的步骤：
+
 1. 确定(identify)用户想要在移动设备所实现的任务。
 2. 记住(memorize)尽可能多的用户的情景。
 3. 相信(presume)用户行为会成功并把他们带到下一个任务中。
