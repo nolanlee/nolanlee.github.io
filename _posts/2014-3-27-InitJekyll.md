@@ -102,7 +102,7 @@ categories: jekyll update
 其中Jekyll预定义了一些字段， 除了上面例子列举的`layout`，`date`，`categories`之外，还有比如`permalink`，`published`，`tags`等，具体描述请参考[官方文档](http://jekyllrb.com/docs/frontmatter/)。上面例子中`title`变量并不是Jekyll预定义的，所以用户也可以在其中自定义一些变量，然后通过Liquid表达式 `{{"{{"}} page.title }}` 来引用。
 最后，在配置项下面可以尽情挥洒笔墨来撰写博文了。
 
-##配置Github Page{:configure-github-page}
+##配置Github Page{:#configure-github-page}
 
 上面介绍过搭建Jekyll运行环境的内容，但我猜懒懒的你一定还是嫌麻烦--怎么又是`Ruby`又是`Gem`的，还可能有什么网络问题，这不是坑爹嘛。莫急莫急，Github Page已经帮你搞定这一切啦，并且它还可以提供独立的二级域名，更重要的，它是免！费！的！
 
