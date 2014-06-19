@@ -1,4 +1,5 @@
 encoding: utf-8
 paginate: 3
 paginate_path: "page:num"
+markdown: kramdown
 excerpt_separator: <!--more-->
