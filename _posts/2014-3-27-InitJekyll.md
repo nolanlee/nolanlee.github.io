@@ -36,7 +36,7 @@ Ruby环境搭建完后，打开控制台输入命令 `gem install jekyll` (Linux
 
 (如果你到这里还没有搭建成功Jekyll环境，并且内心已经被一万头草泥马践踏而过，请在全部阅读完以后联系我！)
 
-<h2 id="create-sampl">用Jekyll搭建一个简单的博客</h2>
+<h2 id="create-sample">用Jekyll搭建一个简单的博客</h2>
 
 打开终端，输入 `jekyll new myblog` 。这样Jekyll会在当前目录下生成一个*Hello World*式的简单Jekyll系统。输入`cd myblog` 和 `jekyll server` 启动这个系统。在浏览器地址栏输入 `localhost：4000` 来打开myblog网站，如下图所示：
 
