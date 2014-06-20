@@ -38,7 +38,8 @@ Ruby环境搭建完后，打开控制台输入命令 `gem install jekyll` (Linux
 
 (如果你到这里还没有搭建成功Jekyll环境，并且内心已经被一万头草泥马践踏而过，请在全部阅读完以后联系我！)
 
-##用Jekyll搭建一个简单的博客{: #create-sample}
+##用Jekyll搭建一个简单的博客
+{: #create-sample}
 
 打开终端，输入 `jekyll new myblog` 。这样Jekyll会在当前目录下生成一个*Hello World*式的简单Jekyll系统。输入`cd myblog` 和 `jekyll server` 启动这个系统。在浏览器地址栏输入 `localhost：4000` 来打开myblog网站，如下图所示：
 
@@ -86,7 +87,8 @@ Ruby环境搭建完后，打开控制台输入命令 `gem install jekyll` (Linux
 
 当我们在浏览器访问根域名时，Jekyll会帮我们自动跳转到index.html页面。
 
-##新建博文{: #new-artist}
+##新建博文
+{: #new-artist}
 
 正如上文说的，新建的博文需要放在**\_post**目录里面，并且以`年-月-日-文章简称`的格式命名文件。这里给大家留个小问题，如果命名为`2013-2-30-ValidDate.md`，然后输入`jekyll build`会发生什么?如果命名为`2013-13-30-InvalidDate.md`又会怎样?
 
@@ -104,7 +106,8 @@ categories: jekyll update
 其中Jekyll预定义了一些字段， 除了上面例子列举的`layout`，`date`，`categories`之外，还有比如`permalink`，`published`，`tags`等，具体描述请参考[官方文档](http://jekyllrb.com/docs/frontmatter/)。上面例子中`title`变量并不是Jekyll预定义的，所以用户也可以在其中自定义一些变量，然后通过Liquid表达式 `{{"{{"}} page.title }}` 来引用。
 最后，在配置项下面可以尽情挥洒笔墨来撰写博文了。
 
-##配置Github Page{: #configure-github-page}
+##配置Github Page
+{: #configure-github-page}
 
 上面介绍过搭建Jekyll运行环境的内容，但我猜懒懒的你一定还是嫌麻烦--怎么又是`Ruby`又是`Gem`的，还可能有什么网络问题，这不是坑爹嘛。莫急莫急，Github Page已经帮你搞定这一切啦，并且它还可以提供独立的二级域名，更重要的，它是免！费！的！
 
