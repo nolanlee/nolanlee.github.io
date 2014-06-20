@@ -14,8 +14,7 @@ table: [Task-Oriented-Design$任务导向是式设计, Memery$记忆, Routing$�
 3. 相信(presume)用户行为会成功并把他们带到下一个任务中。
 4. 预测(predict)用户的下一个行为并且做好相应准备。<!--more-->
 
-## 任务导向式设计(Task-Oriented Design)
-{: #Task-Oriented-Design}
+## 任务导向式设计(Task-Oriented Design){:#Task-Oriented-Design}
 
 首当其冲的：为什么你的用户在这里？
 
@@ -35,8 +34,7 @@ table: [Task-Oriented-Design$任务导向是式设计, Memery$记忆, Routing$�
 
 如果你在家并且想访问Mobile Air，而且有一个很棒的笔记本在咖啡桌上，你是不会把手机掏出你的口袋然后去访问它的。Mobile Air的手机网页访问者一定不是在家里的。而且很可能，他们正在旅行当中。最突出(prominent)和最接近的任务应该是航班状态和查票。预订应该是有可能的，但它不是高优先级的。先前，我们已经翻转了头部的全部体验，因为关于我们的用户为什么来我们知道得更多。
 
-## 记忆 (Memory)
-{: #Memery}
+## 记忆 (Memory){:#Memery}
 
 有一次一个用户已经访问过我们的网站并且查询了一个航班，我们将会知道的更多。首先，我们知道他们有一个航班激将到来。并且我们也知道他们是谁，我们会保存更多的信息在数据库中，比如过去和未来的航班。通过这些信息，我们会通过预测(anticipating)他们的行为来自定义首页。
 
@@ -88,14 +86,13 @@ CACHE MANIFEST
 这个清单告诉浏览器要缓存我们的核心应用资源(assets)但是在访问API方法时需要网络连接。这样，我们的API数据将不会被缓存。注意最上面我们有一个时间戳和版本号。任何对清单的改变将会触发缓存更新；所以，每当(whenever)你要发布一个新版本(ship a new version)， 只要更新时间戳和（或）相应的（accordingly）版本号，这样下一次用户在线的时候，他们将会获得一个新的版本。
 关于这点，你可能会对浏览器是否支持这些新功能产生疑问。在移动设备上的所有约束(constraint)中，对HTML5的支持是个受欢迎的解救(relief)。HTML的本地存储(localStorage)和离线支持在Android2.1和iOS3.2+是可用的。(iOS3.2+的使用大约站97%的苹果移动设备)[http://chitika.com/ios-version-distribution]，(在Android 2.1+的移动设备上上占99%。)[http://chitika.com/insights/2013/jelly-bean-claims-14-of-android-web-usage-in-six-months]。添加对本地保存的检查是响应式的，这样我们的应用在它不可用的时候不会崩溃；但是我们不需要添加对缓存清单的检查因为我们不需要用Javascript去访问这个功能——浏览器会自动检查。
 
-## 路由 (Routing)
-{: #Routing}
+## 路由 (Routing){:#Routing}
 
 关于这点，我们有一个可以离线工作的快速的应用，但是我们没有处理(tacke)关于用户刷新或者当用户重启浏览器的行为。假设(suppose)Ann正在检查她的航班状态同时在不断地(constantly)刷新。我们可以提供一个按钮去做这件事，但是如果她休眠了她的手机然后放回口袋呢？浏览器将会在一段时间后(或者在选择其他应用的时候)销毁页面状态，所以你的应用应该可以恢复状态。这便是路由的由来。
 
 任何独立的页面应该有自己的路由，而且它应该能够在打开路由的情况下被完全载入——意味着我们必须能重新建立我们的应用状态而不用强迫Ann重新开始从首页跳转回她曾在的那个地方。为了这么做，我们需要路由。你应该自己建立一个，但是很多不同框架的好用的Javascript路由可以用。这里是Backbone.js的路由。
 
-```js
+~~~js
 // Define the router
 var MobileAirRouter = Backbone.Router.extend({
   routes: {
@@ -117,12 +114,11 @@ var router = new MobileAirRouter();
 // Start Backbone's history tracking
 Backbone.history.start()
 // That will trigger whichever route matches the current url
-```
+~~~
 
 你可以通过整合路由和本地存储系统得到一个可快速恢复的应用，甚至在没有网络的情况下。
 
-## 可观测的速度(Perceived Speed)
-{: #Perceived-Speed}
+## 可观测的速度(Perceived Speed){:#Perceived-Speed}
 
 一个残酷的事实是在移动设备上以桌面版的速度发布内容是难以置信的难(**delivering content at desktop speeds is incredibly diffcult**)。大多数的移动数据提供商看连接时间都是数百毫秒。这意味着，假设(assuming)你的应用花0毫秒处理(process)请求然后手机花0毫秒出处理和渲染它，你将会有300到500毫秒的延迟等待信号穿越网络。唯一剩下的选项是作弊(cheat)。
 
@@ -191,8 +187,7 @@ fetchFlightLegs(from, to, on, until).done(function() {
 
 正如你看到的，我们已经让应用和用户的行为并行(parallelize)。用户可以做他们需要做的(选日期，选航班，等等)，同时应用预言性的(predictively)加载下个页面的信息。这需要花很多等待的方程(waiting out of the equation)。
 
-## 专注于真正重要的事情 (Focus On What Matters)
-{: #Focus-On-What-Matters}
+## 专注于真正重要的事情 (Focus On What Matters){:#Focus-On-What-Matters}
 移动交互是一个不同的世界，不同的约束(constrains)和不同的预期。简单的添加响应式样式不能满足你的用户基于他们使用的情境所改变的需求(demand)。在建立移动应用的时候请记住下面的步骤：
 
 1. 确定(identify)用户想要在移动设备所实现的任务。
