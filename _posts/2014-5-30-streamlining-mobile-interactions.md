@@ -95,7 +95,7 @@ CACHE MANIFEST
 
 任何独立的页面应该有自己的路由，而且它应该能够在打开路由的情况下被完全载入——意味着我们必须能重新建立我们的应用状态而不用强迫Ann重新开始从首页跳转回她曾在的那个地方。为了这么做，我们需要路由。你应该自己建立一个，但是很多不同框架的好用的Javascript路由可以用。这里是Backbone.js的路由。
 
-~~~js
+```js
 // Define the router
 var MobileAirRouter = Backbone.Router.extend({
   routes: {
@@ -117,7 +117,7 @@ var router = new MobileAirRouter();
 // Start Backbone's history tracking
 Backbone.history.start()
 // That will trigger whichever route matches the current url
-~~~
+```
 
 你可以通过整合路由和本地存储系统得到一个可快速恢复的应用，甚至在没有网络的情况下。
 
