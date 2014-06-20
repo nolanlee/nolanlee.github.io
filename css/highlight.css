@@ -1,7 +1,9 @@
 /*****************************************************************************************************************/
 /* The below codes came from https://gist.github.com/asaaki/1007420, and thanks the author @asaaki very much :-) */
 /*****************************************************************************************************************/
-
+.hight code {
+  font-family: "Courier New", Courier, monospace;
+}
 /*.highlight         { background-color: #49483e }*/
 .c                 { color: #75715e }                            /* Comment                     */
 .err               { color: #960050; background-color: #1e0010 } /* Error                       */
