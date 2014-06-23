@@ -115,6 +115,7 @@ ul {
 .section .article-list .article .article-title {
     margin-bottom: 45px;
     font-size: 2em;
+    line-height: 1.2em;
     word-break: break-all;
 }
 .section .article-list .article .article-title a {
