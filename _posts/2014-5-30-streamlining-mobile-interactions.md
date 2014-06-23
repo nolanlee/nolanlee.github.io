@@ -2,7 +2,7 @@
 layout: article_layout
 title: 流线型移动交互
 isCate: true
-table: [Task-Oriented-Design$任务导向是式设计, Memery$记忆, Routing$路由, Perceived-Speed$可观测的速度, Focus-On-What-Matters$专注于真正重要的东西]
+table: [Task-Oriented-Design$任务驱动设计, Memery$记录用户的行为, Routing$路由, Perceived-Speed$直观的速度, Focus-On-What-Matters$专注于真正重要的东西]
 ---
 
 移动网络是一个很残酷环境：移动处理器要比桌面处理器慢；网络连接脆弱；带宽低；延迟高；触摸屏键盘反应慢。而最好的移动网络应用则擅长于面对这些挑战。
@@ -125,7 +125,7 @@ Backbone.history.start()
 
 <h2 id="Perceived-Speed">直观的速度</h2>
 
-一个残酷的事实是在移动设备上以桌面版的速度发布内容是难以置信的难。大多数的移动数据提供商的连接时间都是数百毫秒。这意味着，假设你的应用花0毫秒处理(请求然后手机花0毫秒出处理和渲染它，你将会有300到500毫秒的延迟等待信号穿越网络。除非用作弊的手段来显得连接很快。
+一个残酷的事实是在移动设备上以桌面版的速度发布内容是难以置信的难。大多数的移动数据提供商的连接时间都是数百毫秒。这意味着，假设你的应用花0毫秒处理请求然后手机花0毫秒出处理和渲染它，你将会有300到500毫秒的延迟等待信号穿越网络。除非用作弊的手段来显得连接很快。
 
 Instagrame(一款图片分享的App)的用户体验被人们所称颂，其中的一个核心策略是[乐观地执行操作(perform actions optimistically)](https://speakerdeck.com/mikeyk/secrets-to-lightning-fast-mobile-design)。意思是说当用户添加照片以后，系统立即说，“完成！”，然后让用户返回时间线，去添加新的照片。没关系，这个数据还没有离开手机。事实上，在你点击提交之前你的照片已经在Instagram的服务器上了，并且在服务器确认你提交以后它将出现在你的时间线上。
 
