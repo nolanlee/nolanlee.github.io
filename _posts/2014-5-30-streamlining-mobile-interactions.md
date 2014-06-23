@@ -9,10 +9,11 @@ table: [Task-Oriented-Design$任务导向是式设计, Memery$记忆, Routing$�
 移动网络是一个非常残酷(harsh)环境：移动处理器要比桌面处理器慢；网络连接脆弱(flaky)；带宽(bandwidth)低；延迟(latency)高；触摸屏键盘反应慢。最好的移动网络应用擅长于处理这些挑战。
 
 这篇文章中，我们将看到流线型移动交互的四个核心方式：
+
 1. 确定(identify)用户想要在移动设备所实现的任务。
 2. 记住(memorize)尽可能多的用户的情景。
 3. 相信(presume)用户行为会成功并把他们带到下一个任务中。
-4. 预测(predict)用户的下一个行为并且做好相应准备。<!--more-->
+4. 预测(predict)用户的下一个行为并且做好相应准备。 <!-- more -->
 
 <h2 id="Task-Oriented-Design">任务导向式设计(Task-Oriented Design)</h2>
 
@@ -24,6 +25,7 @@ table: [Task-Oriented-Design$任务导向是式设计, Memery$记忆, Routing$�
 在最前列(forefront)有票价折扣(fare discount)广告，迷人的旅游景点和一个旅行规划师。在角落里有个选择航班的选项框，用来查看你的航班状态和奖励大纲(rewards program)。
 
 对于桌面用户，我们专注于花更长时间和精力(预订机票)的交互，因为[桌面用户比起移动用户愿意花更多的时间在页面上并且不太可能离开](http://www.webperformancetoday.com/2012/01/20/interesting-new-findings-about-page-views-time-on-site-and-bounce-rate-across-browsers-and-platforms/)，然而移动用户希望(is looking to)完成一个小任务而且他们也没有足够的耐心(patience)。另外，由于在机场的时候用手机上检查航班状态是一个很普遍的用例，我们将把它列到最前列。
+
 ![desktop-prototype-image]({{site.baseurl}}image/2014-5-30/01-desktop-opt.png)
 
 (*对于桌面用户，我们将专注于更长时间和精力的交互*)
@@ -39,6 +41,7 @@ table: [Task-Oriented-Design$任务导向是式设计, Memery$记忆, Routing$�
 有一次一个用户已经访问过我们的网站并且查询了一个航班，我们将会知道的更多。首先，我们知道他们有一个航班激将到来。并且我们也知道他们是谁，我们会保存更多的信息在数据库中，比如过去和未来的航班。通过这些信息，我们会通过预测(anticipating)他们的行为来自定义首页。
 
 举个例子，比如我们知道了Ann已经检票离开纽约前往旧金山。我们也知道她一些天以后将返回纽约；并且两周以后，她会到巴哈马旅行。这里是我们如何展示她的首页：
+
 ![ann-home]({{site.baseurl}}image/2014-5-30/03-memory-opt.png)
 
 所以，我们该如何保存这些数据？我们可以保存在服务器的数据库里，然后使用客户端的cookie。这是一些常用的方式保存这样的东西。然而，这真的仅仅是移动端的交互，而且它会是一个很短的生命周期；用户只要完成了他们的飞行，他们将不再需要这些交互了。此外(additionally)，如果网络断开（当Ann在坐船或者她的手机处于飞行模式），在服务端保存这些数据意味着它不会再生效了。这里用HTML5的localStorage实现的航班信息缓存：
@@ -84,7 +87,7 @@ CACHE MANIFEST
 ~~~
 
 这个清单告诉浏览器要缓存我们的核心应用资源(assets)但是在访问API方法时需要网络连接。这样，我们的API数据将不会被缓存。注意最上面我们有一个时间戳和版本号。任何对清单的改变将会触发缓存更新；所以，每当(whenever)你要发布一个新版本(ship a new version)， 只要更新时间戳和（或）相应的（accordingly）版本号，这样下一次用户在线的时候，他们将会获得一个新的版本。
-关于这点，你可能会对浏览器是否支持这些新功能产生疑问。在移动设备上的所有约束(constraint)中，对HTML5的支持是个受欢迎的解救(relief)。HTML的本地存储(localStorage)和离线支持在Android2.1和iOS3.2+是可用的。(iOS3.2+的使用大约站97%的苹果移动设备)[http://chitika.com/ios-version-distribution]，(在Android 2.1+的移动设备上上占99%。)[http://chitika.com/insights/2013/jelly-bean-claims-14-of-android-web-usage-in-six-months]。添加对本地保存的检查是响应式的，这样我们的应用在它不可用的时候不会崩溃；但是我们不需要添加对缓存清单的检查因为我们不需要用Javascript去访问这个功能——浏览器会自动检查。
+关于这点，你可能会对浏览器是否支持这些新功能产生疑问。在移动设备上的所有约束(constraint)中，对HTML5的支持是个受欢迎的解救(relief)。HTML的本地存储(localStorage)和离线支持在Android2.1和iOS3.2+是可用的。[iOS3.2+的使用大约站97%的苹果移动设备](http://chitika.com/ios-version-distribution)，[在Android 2.1+的移动设备上上占99%。](http://chitika.com/insights/2013/jelly-bean-claims-14-of-android-web-usage-in-six-months)。添加对本地保存的检查是响应式的，这样我们的应用在它不可用的时候不会崩溃；但是我们不需要添加对缓存清单的检查因为我们不需要用Javascript去访问这个功能——浏览器会自动检查。
 
 <h2 id="Routing">路由 (Routing)</h2>
 
@@ -134,6 +137,7 @@ Instagrame的用户体验被人们所称颂，其中的一个核心策略(tactic
 
 
 ![speed-reservation]({{site.baseurl}}image/2014-5-30/04-speed-opt.png)
+
 有次Ann选择了她的航班和日期——但是之前她已经点击了“寻找航班”的按钮——我们将为第一个地点更新信息。这样的话(this way)，如果她要(were to)更改这些值几次，我们可能承担额外的数据消耗(incur an extra data cost)，但是下个页面将会几乎瞬间显示。这里是我们如何提前更新页面:
 
 ~~~js
@@ -183,6 +187,7 @@ fetchFlightLegs(from, to, on, until).done(function() {
 在我们的实际里，第一个地点和第二个地点的选择是在不同的屏幕上，但是这不意味着它们不得不分割(separate)请求。我们可以更新我们的`fetchFlightlegs`方法让第一个地点和第二个点的请求合并(lump)为一个。因此(thus)，从第一个到第二个会瞬间(instantaneous)过渡(transition)。支付的提交(submission of payment)信息请求不需要获取。
 
 当支付被提交到服务器，我们将会同步地(synchronously)通知到加载中的屏幕。我们不想在这一步假设成功。另外(plus)，一个异常快速的响应真的会让Ann感到不安(uneasy)！这里是我们的有数据提前获取和没有数据提前获取的请求链：
+
 ![data-prefetched]({{site.baseurl}}image/2014-5-30/05-speed-opt.png)
 
 正如你看到的，我们已经让应用和用户的行为并行(parallelize)。用户可以做他们需要做的(选日期，选航班，等等)，同时应用预言性的(predictively)加载下个页面的信息。这需要花很多等待的方程(waiting out of the equation)。
