@@ -4,8 +4,6 @@ title: 流线型移动交互
 isCate: true
 table: [Task-Oriented-Design$任务导向是式设计, Memery$记忆, Routing$路由, Perceived-Speed$可观测的速度, Focus-On-What-Matters$专注于真正重要的东西]
 ---
-# 流线型移动交互 (Streamlining Mobile Interactions)
-
 移动网络是一个非常残酷(harsh)环境：移动处理器要比桌面处理器慢；网络连接脆弱(flaky)；带宽(bandwidth)低；延迟(latency)高；触摸屏键盘反应慢。最好的移动网络应用擅长于处理这些挑战。
 
 这篇文章中，我们将看到流线型移动交互的四个核心方式：
@@ -13,7 +11,11 @@ table: [Task-Oriented-Design$任务导向是式设计, Memery$记忆, Routing$�
 1. 确定(identify)用户想要在移动设备所实现的任务。
 2. 记住(memorize)尽可能多的用户的情景。
 3. 相信(presume)用户行为会成功并把他们带到下一个任务中。
-4. 预测(predict)用户的下一个行为并且做好相应准备。 <!-- more -->
+4. 预测(predict)用户的下一个行为并且做好相应准备。 <!--more-->
+
+<!--
+  more
+-->
 
 <h2 id="Task-Oriented-Design">任务导向式设计(Task-Oriented Design)</h2>
 
