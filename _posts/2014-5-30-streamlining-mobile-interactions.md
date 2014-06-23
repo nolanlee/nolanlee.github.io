@@ -11,11 +11,9 @@ table: [Task-Oriented-Design$任务导向是式设计, Memery$记忆, Routing$�
 1. 确定(identify)用户想要在移动设备所实现的任务。
 2. 记住(memorize)尽可能多的用户的情景。
 3. 相信(presume)用户行为会成功并把他们带到下一个任务中。
-4. 预测(predict)用户的下一个行为并且做好相应准备。 <!--more-->
+4. 预测(predict)用户的下一个行为并且做好相应准备。
 
-<!--
-  more
--->
+<!--more-->
 
 <h2 id="Task-Oriented-Design">任务导向式设计(Task-Oriented Design)</h2>
 
