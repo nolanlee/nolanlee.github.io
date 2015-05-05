@@ -110,8 +110,12 @@ a {
     margin: 0 auto;
 }
 .article-container .title {
-    font-size: 2em;
+    font-size: 2.4em;
     margin-bottom: 20px;
+}
+.article-container .post {
+    font-size: 1.4em;
+    line-height: 1.6em;
 }
 .article-nav-container {
     position: absolute;
@@ -126,6 +130,7 @@ a {
     box-shadow: 0 0 10px #000;
     position: relative;
     top: 10px;
+
 }
 .show-article-nav-popup {
     display: block;
@@ -159,13 +164,15 @@ a {
     width: 5px;
     height: 5px;
     position: relative;
-    top: 12px;
+    top: 15px;
     left: -13px;
     background-color: #74dd74;
     border-radius: 3px;
 }
 .article-nav-container ul {
     list-style: none;
+    font-size: 1.2em;
+    line-height: 1.3em;
 }
 .article-nav-container .article-nav .category-item {
     margin-bottom: 5px;
@@ -189,10 +196,6 @@ a {
     .article-nav-popup {
         display: none;
     }
-}
-.article {
-    font-size: 16px;
-    line-height: 1.8em;
 }
 .article pre {
     white-space: pre-wrap;

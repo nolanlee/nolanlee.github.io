@@ -4,7 +4,8 @@ html, body, ul, li, h1, h2, h3 {
     padding: 0;
 }
 html {
-    font-family: Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+    font-size: 12px;
+    font-family: "Helvetica Neue","Microsoft Yahei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
 }
 ul {
     list-style-position: inside;
@@ -23,13 +24,13 @@ ul {
 }
 .header #blog-title {
     font-family: "Times New Roman", Times, serif;
-    font-size: 2.4em;
+    font-size: 3.5em;
     display: block;
 }
 .header #about {
     font-weight: normal;
     font-size: 50px;
-    font-family: 'Parisienne', cursive;
+    font-family: "Parisienne", cursive;
 }
 .header #about:hover {
     text-shadow: 0 0 10px #fff;
@@ -57,9 +58,8 @@ ul {
     margin: 0 auto 45px;
     padding: 0 20px;
     word-break: break-word;
-    /*text-align: justify;*/
-    font-size: 16px;
-    line-height: 1.5em;
+    font-size: 1.6em;
+    line-height: 1.8em;
 }
 .section .article-list .article:after {
     display: block;
@@ -84,8 +84,8 @@ ul {
     content:"";
     width: 2px;
     background: #272822;
-    height: 5px;
-    left: 7px;
+    height: 8px;
+    left: 9px;
     position: absolute;
     top: 2px;
 }
@@ -95,8 +95,8 @@ ul {
     width: 7px;
     background: #272822;
     height: 2px;
-    left: 8px;
-    top: 6px;
+    left: 10px;
+    top: 9px;
     position: absolute;
     transform-origin: left;
     -webkit-transform-origin: left;
@@ -113,9 +113,8 @@ ul {
     font-family: Tahoma, Geneva, sans-serif
 }
 .section .article-list .article .article-title {
-    margin-bottom: 45px;
-    font-size: 2em;
-    line-height: 1.2em;
+    font-size: 2.2em;
+    line-height: 2.4em;
     word-break: break-all;
 }
 .section .article-list .article .article-title a {

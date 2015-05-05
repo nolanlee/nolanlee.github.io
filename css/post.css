@@ -1,14 +1,17 @@
 .post h1 {
 	margin: 50px 0 20px;
-	font-size: 30px;	
+	font-size: 1.6em;
+  	line-height: 1.7em;	
 }
 .post h2 {
 	margin: 35px 0 20px;
-	font-size: 24px;
+	font-size: 1.4em;
+  	line-height: 1.5em;
 }
 .post h3 {
 	margin: 20px 0;
-	font-size: 18px;
+	font-size: 1.3em;
+  	line-height: 1.4em;
 }
 .post p {
 	margin-bottom: 20px;
