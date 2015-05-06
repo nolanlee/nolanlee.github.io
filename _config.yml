@@ -1,3 +1,4 @@
+baseurl: "/"
 encoding: utf-8
 paginate: 3
 paginate_path: "page:num"
