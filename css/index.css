@@ -110,7 +110,8 @@ ul {
     margin-left: 3px;
 }
 .section .article-list .article .article-date-container .article-date, .section .article-list .article .read-more {
-    font-family: Tahoma, Geneva, sans-serif
+    font-family: Tahoma, Geneva, sans-serif;
+    text-transform: uppercase;
 }
 .section .article-list .article .article-title {
     font-size: 2.2em;
