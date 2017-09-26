@@ -13,19 +13,19 @@
     <body>
         <header class="header">
             <nav>
-                <a id="back-home" class="header-button" href="{{site.baseurl}}"></a>                
-                {% if {{page.previous}} %}
+                <a id="back-home" class="header-button" href="{{site.baseurl}}"></a>
+                {% if page.previous %}
                     <a id="previous-post" class="header-button" href="{{ page.previous.url }}"></a>
                 {% endif %}
-                {% if {{page.next}} %}
+                {% if page.next %}
                     <a id="next-post" class="header-button" href="{{ page.next.url }}"></a>
                 {% endif %}
-                {% if {{page.isCate}} %}
+                {% if page.isCate %}
                     <a id="category-button" class="header-button" href="javascript:void(0);"></a>
-                {% endif %}            
+                {% endif %}
             </nav>
         </header>
-        {% if {{page.isCate}} %}
+        {% if page.isCate %}
             <aside class="article-nav-container">
                 <h2>Table of Contents</h2>
                 <nav class="article-nav">
@@ -52,7 +52,7 @@
         {% endif %}
         <section class="article-container">
             <h1 class="title">{{page.title}}</h1>
-            {% if {{page.isCate}} %}
+            {% if page.isCate %}
                 <article class="article post">
             {% else %}
                 <article class="article post no-category">
