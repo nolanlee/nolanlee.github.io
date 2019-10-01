@@ -2,7 +2,9 @@ baseurl: "/"
 encoding: utf-8
 paginate: 3
 paginate_path: "page:num"
-# markdown: redcarpet
+markdown: kramdown
+kramdown:
+  input: GFM
 plugins:
   - jekyll-paginate
 excerpt_separator: <!--more-->
