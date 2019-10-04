@@ -27,11 +27,11 @@ table: [Task-Oriented-Design$任务驱动设计, Memery$记录用户的行为, R
 
 对于桌面用户，我们专注于花更长时间和精力在预订机票的交互上，因为[桌面用户比起移动用户愿意花更多的时间在页面上并且不太可能离开](http://www.webperformancetoday.com/2012/01/20/interesting-new-findings-about-page-views-time-on-site-and-bounce-rate-across-browsers-and-platforms/)，然而移动用户仅仅是为了完成一个小任务况且他们也没有足够的耐心。另外，由于在机场的时候用手机检查航班状态是一个很普遍的场景，所以我们将把它列到手机页面的最前列。
 
-![desktop-prototype-image]({{site.baseurl}}image/2014-5-30/01-desktop-opt.png)
+![desktop-prototype-image](/image/2014-5-30/01-desktop-opt.png)
 
 (*对于桌面用户，我们将专注于让用户有怎样花更长时间和精力去交互*)
 
-![mobile-prototype-image]({{site.baseurl}}image/2014-5-30/02-mobile-opt.png)
+![mobile-prototype-image](/image/2014-5-30/02-mobile-opt.png)
 
 (*用户访问Mobile Air移动网页和桌面版首页有本质的区别。最突出和最接近的任务应该是飞机状态和查票*)。
 
@@ -43,7 +43,7 @@ table: [Task-Oriented-Design$任务驱动设计, Memery$记录用户的行为, R
 
 举个例子，比如我们知道了Ann已经检票离开纽约前往旧金山。我们也知道她一些天以后将返回纽约；并且两周以后，她会到巴哈马旅行。这里是我们如何展示她的首页：
 
-![ann-home]({{site.baseurl}}image/2014-5-30/03-memory-opt.png)
+![ann-home](/image/2014-5-30/03-memory-opt.png)
 
 那么，我们该如何保存这些数据呢？我们可以保存在服务器的数据库里，然后使用浏览器的cookie技术。这是一些常用的保存类似这样信息的方式。但是别忘了，我们在处理移动端的交互，而且这些信息有很短的生命周期--用户只要结束了他们的旅程，他们将不再需要这些信息了。此外，如果网络断开（当Ann在航班上或者她的手机处于飞行模式），那么用户不会访问到服务端保存这些数据。这里我们用HTML5的localStorage实现的航班信息缓存：
 
@@ -138,7 +138,7 @@ Instagrame(一款图片分享的App)的用户体验被人们所称颂，其中�
 5. 得到确认信息
 
 
-![speed-reservation]({{site.baseurl}}image/2014-5-30/04-speed-opt.png)
+![speed-reservation](/image/2014-5-30/04-speed-opt.png)
 
 有次Ann选择了她的航班和日期--但是之前她已经点击了“寻找航班”的按钮--我们将为第一个地点更新信息。这样的话，如果她要更改这些值几次，我们可能要承担额外的数据消耗，但是剩下的几个页面将会几乎瞬间显示。这里是我们如何提前更新页面:
 
@@ -190,7 +190,7 @@ fetchFlightLegs(from, to, on, until).done(function() {
 
 当服务器接收到支付请求后，我们将会同步地通知到加载中的屏幕。因为我们并不想在这一步假设成功。另外，一个异常快速的响应真的会让Ann感到不安！这里是我们的有数据提前获取和没有数据提前获取的请求链：
 
-![data-prefetched]({{site.baseurl}}image/2014-5-30/05-speed-opt.png)
+![data-prefetched](/image/2014-5-30/05-speed-opt.png)
 
 正如你看到的，我们已经让应用和用户的行为并行了。用户可以做他们需要做的事情(选日期，选航班，等等)，同时应用会预测性的加载下个页面的信息。。
 

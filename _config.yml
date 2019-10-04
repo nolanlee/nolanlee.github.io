@@ -3,8 +3,10 @@ encoding: utf-8
 paginate: 3
 paginate_path: "page:num"
 markdown: kramdown
-kramdown:
-  input: GFM
 plugins:
   - jekyll-paginate
 excerpt_separator: <!--more-->
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
