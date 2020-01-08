@@ -1,2 +1,5 @@
 _site
 .jekyll-cache
+dist
+node_modules
+.nuxt
